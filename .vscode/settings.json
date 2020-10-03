@@ -47,6 +47,7 @@
         "**/.fusebox/": true,
         "**/.dynamodb/": true,
         "**/.tern-port": true,
-        "**/.vscode-test": true
+        "**/.vscode-test": true,
+        "out/**/*.*": true
     }
 }
