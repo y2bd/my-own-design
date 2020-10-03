@@ -1,27 +1,34 @@
 /// <reference path="../node_modules/excalibur/dist/excalibur.d.ts" />
 
-let game = new ex.Engine({
-    width: 900,
-    height: 900
+const game = new ex.Engine({
+  width: 1200,
+  height: 900,
+  backgroundColor: new ex.Color(25, 26, 28)
 });
 
+game.isDebug = false;
+ex.Physics.enabled = true;
+ex.Physics.collisionResolutionStrategy = ex.CollisionResolutionStrategy.Box;
+
+game.setAntialiasing(false);
+
 // create an asset loader
-let loader = new ex.Loader();
-let resources = {
-
-    /* include resources here */
-    //txPlayer: new ex.Texture("assets/tex/player.png")
-
-};
+const loader = new ex.Loader();
+const resources = {
+  txMayor: Actors.mayorTexture,
+  txBrush: Actors.brushTexture,
+  txWagon: Actors.wagonTexture
+} as const;
 
 // queue resources for loading
-for (let r in resources) {
-    loader.addResource(resources[r]);
+for (const r in resources) {
+  loader.addResource(resources[r]);
 }
 
 // uncomment loader after adding resources
-game.start(/* loader */).then(() => {
+game.start(loader).then(() => {
+  const world = new Worlds.World(game);
 
-    // start your game!
-
+  game.addScene('world', world);
+  game.goToScene('world');
 });

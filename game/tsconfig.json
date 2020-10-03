@@ -2,6 +2,14 @@
     "compileOnSave": true,
     "compilerOptions": {
         "target": "es5",
-        "outFile": "game.js"
-    }
+        "outFile": "../out/game.js"
+    },
+    "files": [
+        "./interaction.ts",
+        "./mayor.ts",
+        "./brush.ts",
+        "./wagon.ts",
+        "./world.ts",
+        "./game.ts"
+    ]
 }
