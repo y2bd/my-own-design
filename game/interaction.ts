@@ -4,7 +4,7 @@ namespace Actors {
   );
 
   export class Interaction extends ex.Actor {
-    private cameraStrategy = new ex.ElasticToActorStrategy(this, 0.02, 0.6);
+    private cameraStrategy = new ex.ElasticToActorStrategy(this, 0.02, 0.66);
 
     public onInitialize(engine: ex.Engine) {
       this.body.useCircleCollider(340);
