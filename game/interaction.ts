@@ -14,12 +14,18 @@ namespace Actors {
       this.body.collider.on("collisionstart", (event) => {
         if (event.other.group.name === "mayor") {
           this.scene.camera.addStrategy(this.cameraStrategy);
+          document.querySelector('.overlay')?.classList.add('focus');
+
+          Actors.Dialogue.Instance.setTop("i'm not supposed to talk to strangers");
         }
       });
 
       this.body.collider.on("collisionend", (event) => {
         if (event.other.group.name === "mayor") {
           this.scene.camera.removeStrategy(this.cameraStrategy);
+          document.querySelector('.overlay')?.classList.remove('focus');
+
+          Actors.Dialogue.Instance.clearAll();
         }
       });
     }

@@ -5,6 +5,7 @@
         "outFile": "../out/game.js"
     },
     "files": [
+        "./dialogue.ts",
         "./interaction.ts",
         "./mayor.ts",
         "./brush.ts",

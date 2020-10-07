@@ -21,6 +21,9 @@ namespace Worlds {
       wagon.pos.y = engine.drawHeight * 1.75;
       this.addInteractable(wagon);
 
+      const dialogue = Actors.Dialogue.Instance;
+      this.addInteractable(dialogue);
+
       this.camera.strategy.elasticToActor(mayor, 0.02, 0.3);
     }
 

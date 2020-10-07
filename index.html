@@ -2,9 +2,9 @@
 <html>
   <head>
     <title>Of My Own Design</title>
-    <style>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&family=Vollkorn:wght@500&display=swap" rel="stylesheet">     <style>
       body {
-        background: #111;
+        background: #191919;
         display: grid;
         width: 100vw;
         height: 100vh;
@@ -14,6 +14,34 @@
 
         margin: 0;
         padding: 0;
+      }
+
+      .container {
+        width: 1200px;
+        height: 900px;
+
+        position: relative;
+      }
+
+      .container canvas {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+
+      .container .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        background: url('/assets/noise2.png'), radial-gradient(circle at center,#ffffff00 50%, #ffffff33 125%);
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+
+      .container .overlay.focus {
+        opacity: 0.3;
+        transition: opacity 0.5s ease;
       }
     </style>
   </head>
@@ -25,5 +53,10 @@
     ></script>
     <!-- Game reference -->
     <script type="module" src="out/game.js"></script>
+
+    <div class="container">
+      <canvas id="gameCanvas" width="1200" height="900" style="image-rendering: auto; width: 1200px; height: 900px; touch-action: none;"></canvas>
+      <div class="overlay" />
+    </div>
   </body>
 </html>

@@ -3,7 +3,8 @@
 const game = new ex.Engine({
   width: 1200,
   height: 900,
-  backgroundColor: new ex.Color(25, 26, 28)
+  backgroundColor: new ex.Color(25, 26, 28),
+  canvasElementId: 'gameCanvas'
 });
 
 game.isDebug = false;
@@ -17,7 +18,8 @@ const loader = new ex.Loader();
 const resources = {
   txMayor: Actors.mayorTexture,
   txBrush: Actors.brushTexture,
-  txWagon: Actors.wagonTexture
+  txWagon: Actors.wagonTexture,
+  txFont: new ex.Texture('/assets/font_min.png')
 } as const;
 
 // queue resources for loading
